@@ -68,7 +68,9 @@ export function gameReducer(state = initialState, action) {
         userModeError: action.payload
       };
     case SET_USER_MODE:
+      // eslint-disable-next-line no-case-declarations
       const idx = state.gameSetting.findIndex(element => element.field === +action.payload);
+      // eslint-disable-next-line no-case-declarations
       const delay = state.gameSetting[idx].delay;
       return {
         ...state,
