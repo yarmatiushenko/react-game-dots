@@ -18,10 +18,10 @@ export const getGameMode = () => {
       .then(
         (data) => {
           const array = (data) => {
-
+            let i = 0;
             for (let key in data) {
               data[key].mode = key;
-              data[key].id = nanoid(8);
+              data[key].id = i++;
             }
             return data;
 
@@ -139,7 +139,7 @@ export const addElementField = (size) => {
   let arrayElement = [];
   for (let i = 0; i < Math.pow(size, 2); i++) {
     arrayElement.push({
-      id: nanoid(8)+ i,
+      id: i,
       status: 0
     });
   }

@@ -40,7 +40,6 @@
     ]
   },
   "devDependencies": {
-    "nanoid": "^2.1.11",
     "redux-thunk": "^2.3.0"
   }
 }
