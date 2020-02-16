@@ -17,8 +17,9 @@ export const getGameMode = () => {
           const array = (data) => {
             let i = 0;
             for (let key in data) {
+              i++;
               data[key].mode = key;
-              data[key].id = i++;
+              data[key].id = nanoid(4) + i;
             }
             return data;
 
