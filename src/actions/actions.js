@@ -1,15 +1,12 @@
 import GameService from "../services/GameService";
-import nanoid from 'nanoid';
-
 import {
   FETCH_ERROR, FETCH_LOADER, FETCH_SETTING_SUCCESS, SET_USER_NAME, SET_USER_MODE, SET_USER_NAME_ERROR,
   SET_USER_MODE_ERROR, ADD_ELEMENT_FIELD, CHANGE_ELEMENT_STATUS, START_USER_GAME, END_USER_GAME, FETCH_WINNERS_SUCCESS
 } from "../constants/constants";
 
+
+
 const service = new GameService();
-
-
-
 
 
 export const getGameMode = () => {
