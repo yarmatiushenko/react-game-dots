@@ -107,7 +107,7 @@ export function gameReducer(state = initialState, action) {
 
       return {
         ...state,
-        arrayGameField: state.arrayGameField.map(item => item.id === action.idx ?
+        arrayGameField: state.arrayGameField.map(item => item.id === action.id ?
           {...item, status: action.status} : item
         )
       };

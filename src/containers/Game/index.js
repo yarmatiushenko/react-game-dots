@@ -37,10 +37,8 @@ class Game extends React.Component {
     };
     
     handleClick = (id, status) => {
-      const {arrayGameField} = this.props;
       if (status === 1) {
-        const idx = arrayGameField.findIndex(element => element.id === id);
-        this.props.changeElementStatus(idx, 2);
+        this.props.changeElementStatus(id, 2);
       }
 
     };
@@ -104,13 +102,16 @@ class Game extends React.Component {
         if (activeCell.length) {
           const activeCellIdx = activeCell.findIndex(element => element.status === 1);
           const activeCellId = activeCell[activeCellIdx].id;
-          const el = arrayGameField.findIndex(element => element.id === activeCellId);
-          this.props.changeElementStatus(el, 3);
+          const idx = arrayGameField.findIndex(element => element.id === activeCellId);
+          const id = arrayGameField[idx].id;
+          this.props.changeElementStatus(id, 3);
         } else if (inactiveCell.length) {
           const ridx = Math.floor((Math.random() * inactiveCell.length));
           const inActiveCellId = inactiveCell[ridx].id;
+
           const idx = arrayGameField.findIndex(element => element.id === inActiveCellId);
-          this.props.changeElementStatus(idx, 1);
+          const id = arrayGameField[idx].id;
+          this.props.changeElementStatus(id, 1);
         } else {
           clearInterval(interval);
         }

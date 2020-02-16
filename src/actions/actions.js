@@ -3,7 +3,7 @@ import {
   FETCH_ERROR, FETCH_LOADER, FETCH_SETTING_SUCCESS, SET_USER_NAME, SET_USER_MODE, SET_USER_NAME_ERROR,
   SET_USER_MODE_ERROR, ADD_ELEMENT_FIELD, CHANGE_ELEMENT_STATUS, START_USER_GAME, END_USER_GAME, FETCH_WINNERS_SUCCESS
 } from "../constants/constants";
-
+import nanoid from 'nanoid';
 
 
 const service = new GameService();
@@ -118,10 +118,10 @@ export const setUserModeError = (error) => {
 };
 
 
-export const changeElementStatus = (idx, status) => {
+export const changeElementStatus = (id, status) => {
   return {
     type: CHANGE_ELEMENT_STATUS,
-    idx,
+    id,
     status
   };
 };
@@ -136,7 +136,7 @@ export const addElementField = (size) => {
   let arrayElement = [];
   for (let i = 0; i < Math.pow(size, 2); i++) {
     arrayElement.push({
-      id: i,
+      id: nanoid(4)+i,
       status: 0
     });
   }
